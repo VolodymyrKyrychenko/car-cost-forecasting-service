@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car cost prediction</title>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body style="background-attachment: fixed; background-size: cover; padding:0px; background-image: url(../static/images/car-background.jpg);">
+    <div class="form-block">
+        <h1 style="text-align:center">Car cost prediction</h1>
+        <h2>{{ prediction_text }}</h2>
+        <form action="{{ url_for('predict_from_form')}}" method="post">
+            <label for="engine_capacity">Engine capacity</label><br>
+            <input id="engine_capacity" type="number" min="0" step="any" name="engine_capacity" value="{{ input_data['engine_capacity'] }}"><br>
+
+            <label for="type">Type</label><br>
+            <input id="type" type="text" name="type" value="{{ input_data['type'] }}"><br>
+
+            <label for="registration_year">Registration year</label><br>
+            <input id="registration_year" type="number" min="0" name="registration_year" value="{{ input_data['registration_year'] }}"><br>
+
+            <label for="gearbox">Gearbox</label><br>
+            <input id="gearbox" type="text" name="gearbox" value="{{ input_data['gearbox'] }}"><br>
+
+            <label for="power">Power</label><br>
+            <input id="power" type="number" min="0" name="power" value="{{ input_data['power'] }}"><br>
+
+            <label for="model">Model</label><br>
+            <input id="model" type="text" name="model" value="{{ input_data['model'] }}"><br>
+
+            <label for="mileage">Mileage</label><br>
+            <input id="mileage" type="number" min="0" name="mileage" value="{{ input_data['mileage'] }}"><br>
+
+            <label for="fuel">Fuel</label><br>
+            <input id="fuel" type="text" name="fuel" value="{{ input_data['fuel'] }}"><br>
+
+            <label for="brand">Brand</label><br>
+            <input id="brand" type="text" name="brand" value="{{ input_data['brand'] }}"><br>
+
+            <label for="damage">Damage</label><br>
+            <input id="damage" type="number" min="0" max="1" name="damage" value="{{ input_data['damage'] }}"><br>
+
+            <label for="zipcode">Zipcode</label><br>
+            <input id="zipcode" type="number" min="0" name="zipcode" value="{{ input_data['zipcode'] }}"><br>
+
+            <label for="insurance_price">Insurance price</label><br>
+            <input id="insurance_price" type="number" min="0" name="insurance_price" value="{{ input_data['insurance_price'] }}"><br>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>

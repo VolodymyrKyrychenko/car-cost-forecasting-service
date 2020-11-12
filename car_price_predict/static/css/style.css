@@ -1,0 +1,29 @@
+body {
+	font-size: 20px;
+	text-align:center;
+}
+
+.form-block {
+	position: absolute;
+	left: 50%;
+	margin-left: -200px;
+	width:400px;
+}
+
+input {
+	width: 100%;
+	margin-bottom: 10px;
+	padding: 5px;
+	font-size: 14px;
+	border: 1px solid rgba(0,0,0,0.3);
+    background-color: lightgrey;
+}
+
+button {
+  background: #a9dddd;
+  width: 100%;
+  border: 0;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}

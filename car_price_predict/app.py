@@ -37,7 +37,7 @@ def predict_from_form():
     x_test = pd.DataFrame(data_dict)
     x_test = x_test[ordered_features]
     price = predict.predict_result(x_test)[0]
-    return render_template('index.html', prediction_text=f'Predicted price = {price}', input_data=input_data)
+    return render_template('index.html', prediction_text='Predicted price = {:.2f}'.format(price), input_data=input_data)
 
 
 def get_data_dict(content):
@@ -49,7 +49,7 @@ def get_data_dict(content):
 
 @app.route('/version')
 def get_version():
-    return 'Model: 0.1; Package: 0.1'
+    return 'Model: XGBRegressor; Package: v1'
 
 
 if __name__ == '__main__':
